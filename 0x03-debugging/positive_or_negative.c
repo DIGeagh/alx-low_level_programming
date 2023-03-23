@@ -1,7 +1,6 @@
-#include <stdlib.h>
-#include <time.h>
-#include <stdio.h>
+#include "main.h"
 
+void positive_or_negative(int i)
 /**
  * main - Determines if a number is positive, negative or zero.
  *
