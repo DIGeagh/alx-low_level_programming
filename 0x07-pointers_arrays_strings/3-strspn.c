@@ -1,31 +1,28 @@
 #include "main.h"
 /**
  * _strspn - gets the length of a prefix substring
- * @str: pointer to the string to be searched
- * @prefix: pointer to the prefix substring
- *
- * Return: the length of the prefix substring
+ * @s: pointer to the string to be searched
+ * @accept: pointer to the prefix substring
+ * Return: Always 0 (Success)
  */
-unsigned int _strspn(char *str, char *prefix)
+unsigned int _strspn(char *s, char *accept)
 {
-    unsigned int count = 0;
-    int i, j;
+	unsigned int n = 0;
+	int r;
 
-    for (i = 0; str[i]; i++)
-    {
-        for (j = 0; prefix[j]; j++)
-        {
-            if (str[i] == prefix[j])
-            {
-                count++;
-                break;
-            }
-        }
-        if (!prefix[j])
-        {
-            break;
-        }
-    }
-
-    return count;
+	while (*s)
+	{
+		for (r = 0; accept[r]; r++)
+		{
+			if (*s == accept[r])
+			{
+				n++;
+				break;
+			}
+			else if (accept[r + 1] == '\0')
+				return (n);
+		}
+		s++;
+	}
+	return (n);
 }
