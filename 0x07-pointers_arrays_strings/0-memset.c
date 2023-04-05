@@ -13,8 +13,8 @@ char *_memset(char *dest, char val, unsigned int n)
 
 	for (; n > 0; i++)
 	{
-        dest[i] = val;
-	n--;
+		dest[i] = val;
+		n--;
 	}
-    return dest;
+	return (dest);
 }
