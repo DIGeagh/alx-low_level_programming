@@ -1,11 +1,11 @@
 #include "main.h"
 /**
- * _memcpy - copies a block of memory from a source to a destination
- * @dest: pointer to the destination location where the memory will be copied to
- * @src: pointer to the source location from where the memory will be copied from
- * @n: number of bytes to be copied
+ *_memcpy - copies a block of memory from a source to a destination
+ *@dest: pointer to the destination location where the memory will be copied to
+*@src: pointer to the source location from where the memory will be copied from
+ *@n: number of bytes to be copied
  *
- * Return: a pointer to the destination location
+ *Return: copied memory with n bytes changed
  */
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
