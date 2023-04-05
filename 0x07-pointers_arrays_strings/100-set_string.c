@@ -2,11 +2,11 @@
 
 /**
  * set_string - sets the value of a pointer to a char
- * @str_ptr: pointer to pointer to a char
- * @str: pointer to char
+ * @ptr: pointer to pointer
+ * @str: pointer char
  */
 
-void set_string(char **str_ptr, char *str)
+void set_string(char **ptr, char *str)
 {
-	*str_ptr = str;
+	*ptr = str;
 }
