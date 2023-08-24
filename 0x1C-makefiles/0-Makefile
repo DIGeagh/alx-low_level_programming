@@ -1,22 +1,17 @@
-# Name of the executable
+CC = gcc
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
 TARGET = school
 
-# Source files
-SRCS = main.c school.c
-
-# Compiler and flags
-CC = gcc
-CFLAGS = -Wall -Werror -Wextra -pedantic
-
-# Make rules
 all: $(TARGET)
 
-$(TARGET): $(SRCS)
-	$(CC) $(CFLAGS) $(SRCS) -o $(TARGET)
+$(TARGET): $(OBJ)
+	$(CC) $(OBJ) -o $@
+
+%.o: %.c
+	$(CC) -c $< -o $@
 
 clean:
-	rm -f $(TARGET)
+	rm -f $(OBJ) $(TARGET)
 
 re: clean all
-
-.PHONY: all clean re
