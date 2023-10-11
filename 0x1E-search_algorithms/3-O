@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Function to perform an iterative linear search
+linear_search() {
+    local array=("$@")
+    local target=999  # Replace with the value you want to search for
+
+    for element in "${array[@]}"; do
+        if [ "$element" -eq "$target" ]; then
+            echo "Element found: $element"
+        fi
+    done
+}
+
+# Create an array with a size of 1000 (you can adjust this as needed)
+array=($(seq 1 1000))
+
+# Measure the space complexity before running the linear search
+before=$(ps -o rss= -p $$)
+
+# Run the linear search
+linear_search "${array[@]}"
+
+# Measure the space complexity after running the linear search
+after=$(ps -o rss= -p $$)
+
+# Calculate and display the space complexity
+space_complexity=$((after - before))
+echo "Space complexity (worst case): $space_complexity KB"
