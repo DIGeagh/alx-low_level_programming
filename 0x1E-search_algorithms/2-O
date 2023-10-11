@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Function to calculate the time complexity
+calculate_time_complexity() {
+    echo "The time complexity (worst case) of a linear search in an array of size $1 is O($1)."
+}
+
+# Check if an argument (array size) is provided
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <array_size>"
+    exit 1
+fi
+
+# Call the function with the provided array size
+calculate_time_complexity "$1"
